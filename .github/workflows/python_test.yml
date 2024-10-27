@@ -1,0 +1,29 @@
+name: Python application test with Ruff linting
+
+on:
+  # push, pull_requesetをONにすると、push,PRが行われた際に自動的に実行する様になる。
+  # push:
+  #   branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'  # Select the Python version.
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        cd installation 
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Lint with Ruff
+      run: ruff .
+    - name: Run pytest
+      run: pytest

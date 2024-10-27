@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "charliermarsh.ruff",
+        "oderwat.indent-rainbow",
+        "matangover.mypy",
+        "usernamehw.errorlens",
+        "njpwerner.autodocstring",
+        "github.vscode-pull-request-github",
+        "shd101wyy.markdown-preview-enhanced",
+        "ms-toolsai.jupyter",
+        "mechatroner.rainbow-csv",
+        "mosapride.zenkaku",
+        "mhutchie.git-graph",
+        "zhuangtongfa.material-theme",
+        "ms-python.black-formatter",
+        "pkief.material-icon-theme",
+        "bierner.markdown-mermaid",
+        "hediet.vscode-drawio",
+    ],
+
+    
+}
