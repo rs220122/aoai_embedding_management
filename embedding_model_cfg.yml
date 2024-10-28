@@ -1,0 +1,45 @@
+aoai_resource:
+  # エンドポイントとAPIキーが格納されている環境変数名を記載する。それを内部でロードする。
+  AOAI1: &AOAI1
+    endpoint_environ: OPENAI_ENDPOINT1
+    api_key_environ: OPENAI_API_KEY1
+  AOAI2: &AOAI2
+    endpoint_environ: OPENAI_ENDPOINT2
+    api_key_environ: OPENAI_API_KEY2
+
+
+models:
+  # キー名は、オフィシャルモデル名を指定する。(text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large)
+  text-embedding-ada-002:
+    ada002-1:
+      # re
+      # 
+      resource_info: *AOAI1 
+      model_environ: EMB_ADA_001
+      quota: 10
+    ada002-2:
+      resource_info: *AOAI2
+      model_environ: EMB_ADA_002
+      quota: 10
+  
+  text-embedding-3-small:
+    3small-1:
+      resource_info: *AOAI1
+      model_environ: EMB_3_SMALL_001
+      quota: 100
+    3small-2:
+      resource_info: *AOAI2
+      model_environ: EMB_3_SMALL_002
+      quota: 10
+  
+  text-embedding-3-large:
+    3large-1:
+      resource_info: *AOAI1 
+      model_environ: EMB_3_LARGE_001
+      quota: 100
+    3large-2:
+      resource_info: *AOAI2
+      model_environ: EMB_3_LARGE_002
+      quota: 10
+    
+
